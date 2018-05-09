@@ -1,0 +1,36 @@
+@import "variables.scss";
+
+.grid {
+  margin: 0 auto;
+  padding-top: 5px;
+  display: grid;
+  grid-gap: $grid-gap;
+}
+
+.grid--720p {
+  width: $breakpoint-720p-width;
+  height: $breakpoint-720p-height;
+  grid-template-columns: repeat($breakpoint-720p-columns, ($breakpoint-720p-width / $breakpoint-720p-columns) - $grid-gap);
+  grid-template-rows: repeat($breakpoint-720p-rows, ($breakpoint-720p-height / $breakpoint-720p-rows) - $grid-gap);
+}
+
+.grid--1080p {
+  width: $breakpoint-1080p-width;
+  height: $breakpoint-1080p-height;
+  grid-template-columns: repeat($breakpoint-1080p-columns, ($breakpoint-1080p-width / $breakpoint-1080p-columns));
+  grid-template-rows: repeat($breakpoint-1080p-rows, ($breakpoint-1080p-height / $breakpoint-1080p-rows));
+}
+
+.grid--1440p {
+  width: $breakpoint-1440p-width;
+  height: $breakpoint-1440p-height;
+  grid-template-columns: repeat($breakpoint-1440p-columns, ($breakpoint-1440p-width / $breakpoint-1440p-columns) - $grid-gap);
+  grid-template-rows: repeat($breakpoint-1440p-rows, ($breakpoint-1440p-height / $breakpoint-1440p-rows) - $grid-gap);
+}
+
+.grid--2160p {
+  width: $breakpoint-2160p-width;
+  height: $breakpoint-2160p-height;
+  grid-template-columns: repeat($breakpoint-2160p-columns, ($breakpoint-2160p-width / $breakpoint-2160p-columns) - $grid-gap);
+  grid-template-rows: repeat($breakpoint-2160p-rows, ($breakpoint-2160p-height / $breakpoint-2160p-rows) - $grid-gap);
+}

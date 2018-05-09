@@ -1,0 +1,55 @@
+@import "variables.scss";
+
+.widget {
+  background-color: $color-primary;
+  color: $color-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.no-cssgrid .widget {
+  margin: 5px;
+}
+
+.widget-title {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  padding: 5px;
+  justify-self: start;
+}
+
+.widget-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.widget--col-1 { grid-column: auto / span 1; }
+.widget--col-2 { grid-column: auto / span 2; }
+.widget--col-3 { grid-column: auto / span 3; }
+.widget--col-4 { grid-column: auto / span 4; }
+.widget--col-5 { grid-column: auto / span 5; }
+.widget--col-6 { grid-column: auto / span 6; }
+.widget--col-7 { grid-column: auto / span 7; }
+.widget--col-8 { grid-column: auto / span 8; }
+
+.widget--row-1 { grid-row: auto / span 1; }
+.widget--row-2 { grid-row: auto / span 2; }
+.widget--row-3 { grid-row: auto / span 3; }
+.widget--row-4 { grid-row: auto / span 4; }
+.widget--row-5 { grid-row: auto / span 5; }
+.widget--row-6 { grid-row: auto / span 6; }
+.widget--row-7 { grid-row: auto / span 7; }
+.widget--row-8 { grid-row: auto / span 8; }
+
+.widget--no-padding {
+  padding: 0;
+}
