@@ -1,0 +1,35 @@
+@import "variables.scss";
+
+.countdown {
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.countdown-block {
+  padding: 0 5px;
+  border-radius: 3px;
+  display: inline-flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+.countdown-block > span {
+  padding: 15px 10px;
+  border-radius: 3px;
+  background-color: $color-primary;
+  filter: brightness(80%);
+  display: inline-block;
+}
+
+.countdown-text {
+  padding-top: 5px;
+  font-size: 12px;
+}
