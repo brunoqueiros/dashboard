@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { isBefore, isSameDay, isWeekend, addDays, format } from 'date-fns';
+import { isBefore, isWeekend, addDays, format } from 'date-fns';
 import humanInterval from 'human-interval';
 import getProxyUrl from '../../../utils/get-proxy-url';
 import Widget from '../../../components/Widget';
@@ -42,7 +42,6 @@ export default class SprintDaysRemaining extends Component {
     .then(response => {
       this.setState({
         daysRemaining: this.getDaysRemaining(0, new Date(), response.values[0].endDate),
-        sprintName: response.values[0].name,
         isLoading: false,
         lastUpdated: format(new Date(), 'HH:mm:ss')
       })
@@ -59,7 +58,7 @@ export default class SprintDaysRemaining extends Component {
   }
 
   render () {
-    const { daysRemaining, sprintName, lastUpdated, isLoading, error } = this.state;
+    const { daysRemaining, lastUpdated, isLoading, error } = this.state;
     const { title } = this.props;
 
     return (
