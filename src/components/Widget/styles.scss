@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5px;
 }
 
 .no-cssgrid .widget {
@@ -49,7 +48,3 @@
 .widget--row-6 { grid-row: auto / span 6; }
 .widget--row-7 { grid-row: auto / span 7; }
 .widget--row-8 { grid-row: auto / span 8; }
-
-.widget--no-padding {
-  padding: 0;
-}

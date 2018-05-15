@@ -5,6 +5,7 @@ import Loader from '../Loader';
 import './styles.css';
 
 export default ({
+  className,
   children,
   lastUpdated,
   noPadding = false,
@@ -16,7 +17,7 @@ export default ({
 }) => (
   <div className={classnames(`widget widget--col-${col} widget--row-${row}`, {
     'widget--no-padding': noPadding
-  })}>
+  }, className)}>
     {title && <span className="widget-title">{title}</span>}
     <span className="widget-content">
       {error ?
