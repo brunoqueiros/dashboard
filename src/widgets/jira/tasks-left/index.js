@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import humanInterval from 'human-interval';
 import { format } from 'date-fns';
 import getProxyUrl from '../../../utils/get-proxy-url';
-import Widget from '../../../components/Widget';
+import NumberWidget from '../../../components/NumberWidget';
 
 const DEAFULT_TITLE = 'Sprint Tasks Left';
 
@@ -10,8 +10,7 @@ export default class JiraTasksLeft extends Component {
   state = {
     tasksLeft: null,
     isLoading: false,
-    error: false,
-    lastUpdated: null
+    error: false
   };
 
   getSprintId() {
@@ -40,8 +39,7 @@ export default class JiraTasksLeft extends Component {
       .then(response => {
         this.setState({
           tasksLeft: response.issues.filter(issue => !issue.fields.resolutiondate || issue.fields.resolutiondate === 0).length,
-          isLoading: false,
-          lastUpdated: format(new Date(), 'HH:mm:ss')
+          isLoading: false
         });
       });
     })
@@ -57,16 +55,17 @@ export default class JiraTasksLeft extends Component {
   }
 
   render () {
-    const { tasksLeft, lastUpdated, isLoading, error } = this.state;
+    const { tasksLeft, isLoading, error } = this.state;
     const { title } = this.props;
 
     return (
-      <Widget title={title || DEAFULT_TITLE} lastUpdated={lastUpdated} loading={isLoading} error={error}>
-        <span className="text-large">
-          {tasksLeft}
-        </span>
-        tasks
-      </Widget>
+      <NumberWidget
+        title={title || DEAFULT_TITLE}
+        loading={isLoading}
+        error={error}
+        amount={tasksLeft}
+        amountDescription="tasks"
+      />
     )
   }
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { isBefore, isWeekend, addDays, format } from 'date-fns';
 import humanInterval from 'human-interval';
 import getProxyUrl from '../../../utils/get-proxy-url';
-import Widget from '../../../components/Widget';
+import NumberWidget from '../../../components/NumberWidget';
 
 const DEAFULT_TITLE = 'Sprint Days Remaining';
 
@@ -10,8 +10,7 @@ export default class SprintDaysRemaining extends Component {
   state = {
     daysRemaining: null,
     isLoading: false,
-    error: false,
-    lastUpdated: null
+    error: false
   };
 
   getDaysRemaining(days, date, endDate) {
@@ -42,8 +41,7 @@ export default class SprintDaysRemaining extends Component {
     .then(response => {
       this.setState({
         daysRemaining: this.getDaysRemaining(0, new Date(), response.values[0].endDate),
-        isLoading: false,
-        lastUpdated: format(new Date(), 'HH:mm:ss')
+        isLoading: false
       })
     })
     .catch(error => {
@@ -58,16 +56,17 @@ export default class SprintDaysRemaining extends Component {
   }
 
   render () {
-    const { daysRemaining, lastUpdated, isLoading, error } = this.state;
+    const { daysRemaining, isLoading, error } = this.state;
     const { title } = this.props;
 
     return (
-      <Widget title={title || DEAFULT_TITLE} lastUpdated={lastUpdated} loading={isLoading} error={error}>
-        <span className="text-large">
-          {daysRemaining}
-        </span>
-        days
-      </Widget>
+      <NumberWidget
+        title={title || DEAFULT_TITLE}
+        loading={isLoading}
+        error={error}
+        amount={daysRemaining}
+        amountDescription="Days remaining"
+      />
     )
   }
 }
