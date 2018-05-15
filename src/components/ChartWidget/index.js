@@ -6,13 +6,15 @@ import './styles.css';
 
 export default ({
   title,
+  loading,
+  error,
   amount,
   amountDescription,
   variationAmount,
   variationDirection,
   data
 }) => (
-  <Widget className="widget--chart" title={title}>
+  <Widget className="widget--chart" title={title} loading={loading} error={error}>
     <div className="row">
       <div>
         <div className="text-medium">{amount}</div>
