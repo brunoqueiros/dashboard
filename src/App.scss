@@ -1,11 +1,15 @@
-@import "variables.scss";
+@import "variables";
 
 * {
-  box-sizing: border-box;
+  &,
+  &:after,
+  &:after {
+    box-sizing: border-box;
+  }
 }
 
 body {
-  font-family: 'Helvetica Neue', 'Work Sans', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
@@ -14,7 +18,7 @@ body {
 }
 
 .text-large {
-  font-size: 60px;
+  font-size: 80px;
 }
 
 .text-medium {
