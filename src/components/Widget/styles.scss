@@ -9,14 +9,14 @@
 }
 
 .no-cssgrid .widget {
-  margin: 5px;
+  margin: $grid-gap / 2;
 }
 
 .widget-title {
   display: block;
   width: 100%;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 300;
   text-align: center;
   padding: 5px;
   justify-self: start;
